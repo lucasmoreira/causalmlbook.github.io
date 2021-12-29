@@ -8,7 +8,4 @@ jobs:
     steps:
       - uses: docker://pandoc/latex:2.9
         with:
-          args: book/main.tex --pdf-engine=xelatex -o pdf/main.pdf
-      - uses: docker://pandoc/latex:2.9
-        with:
           args: book/main.tex -s --mathml -o html/main.html
