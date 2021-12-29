@@ -1,0 +1,14 @@
+name: Convert tex to HTML & PDF
+
+on: push
+
+jobs:
+  convert_via_pandoc:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: docker://pandoc/latex:2.9
+        with:
+          args: book/main.tex --pdf-engine=xelatex -o pdf/main.pdf
+      - uses: docker://pandoc/latex:2.9
+        with:
+          args: book/main.tex -s --mathml -o html/main.html
