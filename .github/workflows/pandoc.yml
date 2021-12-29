@@ -6,6 +6,14 @@ jobs:
   convert_via_pandoc:
     runs-on: ubuntu-18.04
     steps:
+      - uses: actions/checkout@v2
+
+      - name: create file list
+        id: files_list
+        run: |
+          echo "Lorem ipsum" > lorem_1.md  # create two example files
+          echo "dolor sit amet" > lorem_2.md
+          mkdir output
       - uses: docker://pandoc/latex:2.9
         with:
           args: book/main.tex -s --mathml -o html/main.html
