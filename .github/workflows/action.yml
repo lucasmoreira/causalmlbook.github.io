@@ -12,17 +12,25 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: create folders
+      - name: Create build directories
         run: |
-          mkdir -p html/sections
-          echo "placeholder" > html/sections/placeholder.txt
+          mkdir html/sections
+          mkdir html/pdf
+      
+      - name: Install TexLive
+        uses: docker://texlive/texlive:latest
 
       - name: Build html
         uses: docker://pandoc/latex:2.9
         with:
           args: --verbose --from=latex --to=html -o html/sections/main.html --katex --template=html/templates/default.html book/main.tex
 
-      - name: Deploy dev
+      - name: Build pdf
+        uses: docker://pandoc/latex:2.9
+        with:
+          args: --verbose --from=latex --to=pdf -o html/pdf/main.pdf --pdf-engine=pdflatex book/main.tex
+
+      - name: Deploy
         uses: JamesIves/github-pages-deploy-action@4.1.7
         with:
           branch: dev # The branch the action should deploy to.
