@@ -3,17 +3,13 @@ name: Convert tex to HTML & PDF
 on: push
 
 jobs:
-  convert_via_pandoc:
+  pandoc_tex2html:
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
 
-      - name: create file list
-        id: files_list
-        run: |
-          echo "Lorem ipsum" > lorem_1.md  # create two example files
-          echo "dolor sit amet" > lorem_2.md
-          mkdir output
+      - name: create folders
+        run: mkdir html/_sections
       - uses: docker://pandoc/latex:2.9
         with:
-          args: book/main.tex -s --mathml -o html/main.html
+          args: --verbose --from=latex --to=html -o html/_sections/main.html --mathml --template=html/templates/default.html book/main.tex
