@@ -6,7 +6,7 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: checkout
+      - name: Checkout
         uses: actions/checkout@v2
 
       - name: create folders
@@ -14,13 +14,13 @@ jobs:
           mkdir -p html/sections
           echo "placeholder" > html/sections/placeholder.txt
 
-      - name: build html
+      - name: Build html
         uses: docker://pandoc/latex:2.9
         with:
           args: --verbose --from=latex --to=html -o html/sections/main.html --mathml --template=html/templates/default.html book/main.tex
 
-      - name: Deploy
+      - name: Deploy dev
         uses: JamesIves/github-pages-deploy-action@4.1.7
         with:
-          branch: gh-pages # The branch the action should deploy to.
+          branch: dev # The branch the action should deploy to.
           folder: html # The folder the action should deploy.
