@@ -10,8 +10,8 @@ jobs:
 
       - name: create folders
         run: |
-          mkdir html/sections
-          echo "placeholder" > html/sections/.gitkeep
+          mkdir -p html/sections
+          echo "placeholder" > html/sections/placeholder.txt
       - uses: docker://pandoc/latex:2.9
         with:
           args: --verbose --from=latex --to=html -o html/sections/main.html --mathml --template=html/templates/default.html book/main.tex
