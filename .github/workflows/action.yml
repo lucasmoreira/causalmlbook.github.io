@@ -20,7 +20,7 @@ jobs:
       - name: Build html
         uses: docker://pandoc/latex:2.9
         with:
-          args: --verbose --from=latex --to=html -o html/sections/main.html --mathml --template=html/templates/default.html book/main.tex
+          args: --verbose --from=latex --to=html -o html/sections/main.html --katex --template=html/templates/default.html book/main.tex
 
       - name: Deploy dev
         uses: JamesIves/github-pages-deploy-action@4.1.7
