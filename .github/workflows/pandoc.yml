@@ -1,17 +1,26 @@
-name: Convert tex to HTML & PDF
+name: Build and Deploy
 
 on: push
 
 jobs:
-  pandoc_tex2html:
-    runs-on: ubuntu-18.04
+  build-and-deploy:
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - name: checkout
+        uses: actions/checkout@v2
 
       - name: create folders
         run: |
           mkdir -p html/sections
           echo "placeholder" > html/sections/placeholder.txt
-      - uses: docker://pandoc/latex:2.9
+
+      - name: build html
+        uses: docker://pandoc/latex:2.9
         with:
           args: --verbose --from=latex --to=html -o html/sections/main.html --mathml --template=html/templates/default.html book/main.tex
+
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@4.1.7
+        with:
+          branch: gh-pages # The branch the action should deploy to.
+          folder: html # The folder the action should deploy.
