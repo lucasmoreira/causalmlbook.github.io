@@ -9,7 +9,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: create folders
-        run: mkdir html/_sections
+        run: mkdir html/sections
       - uses: docker://pandoc/latex:2.9
         with:
-          args: --verbose --from=latex --to=html -o html/_sections/main.html --mathml --template=html/templates/default.html book/main.tex
+          args: --verbose --from=latex --to=html -o html/sections/main.html --mathml --template=html/templates/default.html book/main.tex
