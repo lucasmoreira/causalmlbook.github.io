@@ -34,8 +34,6 @@ jobs:
       - name: Build html
         uses: docker://pandoc/latex:2.9
         run: for f in book/chapters/*.tex; do file="${f##**/}"; filename="${file%%.*}"; echo $file; pandoc/latex:2.9 --verbose --from=latex --to=html -o "html/sections/$filename.html" --katex --template=html/templates/default.html "book/chapters/$file"; done
-        #with:
-        #  args: --verbose --from=latex --to=html -o ${{ steps.chapter_name_list.outputs.files }} --katex --template=html/templates/default.html ${{ steps.chapter_path_list.outputs.files }}
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@4.1.7
