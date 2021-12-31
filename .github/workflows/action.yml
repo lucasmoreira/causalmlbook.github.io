@@ -22,7 +22,7 @@ jobs:
         run: |
           ls -a
           cd book/chapters
-          echo "::set-output name=files::$(printf '"%s" ' *.tex)"
+          echo "::set-output name=files::$(printf '"book/chapters/%s" ' *.tex)"
       
       - name: Install TexLive
         uses: docker://texlive/texlive:latest
