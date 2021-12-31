@@ -17,12 +17,18 @@ jobs:
           mkdir html/sections
           mkdir html/pdf
       
-      - name: Make chapter list
-        id: chapter_list
+      - name: Make chapter path list
+        id: chapter_path_list
         run: |
           ls -a
           cd book/chapters
           echo "::set-output name=files::$(printf '"book/chapters/%s" ' *.tex)"
+
+      - name: Make chapter name list
+        id: chapter_name_list
+        run: |
+          ls -a
+          echo "::set-output name=files::$(for file in *; do echo "/html/sections/${file##**/}" | cut -f 1 -d '.'; done)"
       
       - name: Install TexLive
         uses: docker://texlive/texlive:latest
@@ -30,12 +36,7 @@ jobs:
       - name: Build html
         uses: docker://pandoc/latex:2.9
         with:
-          args: --verbose --from=latex --to=html -o /html/sections/main.html --katex --template=html/templates/default.html ${{ steps.chapter_list.outputs.files }}
-
-      - name: Build pdf
-        uses: docker://pandoc/latex:2.9
-        with:
-          args: --verbose --from=latex --to=pdf -o /html/pdf/main.pdf --pdf-engine=pdflatex ${{ steps.chapter_list.outputs.files }}
+          args: --verbose --from=latex --to=html -o ${{ steps.chapter_name_list.outputs.files }} --katex --template=html/templates/default.html ${{ steps.chapter_path_list.outputs.files }}
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@4.1.7
