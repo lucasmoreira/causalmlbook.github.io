@@ -31,8 +31,10 @@ jobs:
           cd html/sections
           echo "::set-output name=files::$(for file in *; do echo "/html/sections/${file##**/}" | cut -f 1 -d '.'; done)"
 
-      - name: Build html
+      - name: Install pandoc
         uses: docker://pandoc/latex:2.9
+
+      - name: Build html
         run: for f in book/chapters/*.tex; do file="${f##**/}"; filename="${file%%.*}"; echo $file; pandoc/latex:2.9 --verbose --from=latex --to=html -o "html/sections/$filename.html" --katex --template=html/templates/default.html "book/chapters/$file"; done
 
       - name: Deploy
