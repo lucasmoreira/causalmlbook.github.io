@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Merriweather");
 /* Import ET Book styles
    adapted from https://github.com/edwardtufte/../../../et-book/blob/gh-pages/et-book.css */
 @font-face {
@@ -46,7 +47,7 @@ body {
   margin-left: auto;
   margin-right: auto;
   padding-left: 14em;
-  font-family: et-book, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+  font-family: Merriweather, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
   background-color: #fffff8;
   color: #111;
   max-width: 1400px;
@@ -61,6 +62,16 @@ body {
     }
 }
 */
+h1,
+h2,
+h3 {
+  font-family: Palatino;
+  font-weight: 100;
+  color: #333;
+  font-style: italic;
+}
+
+/*
 h1 {
   font-weight: 400;
   margin-top: 4rem;
@@ -86,7 +97,7 @@ h3 {
   margin-bottom: 1.4rem;
   line-height: 1;
 }
-
+*/
 hr {
   display: block;
   height: 1px;
@@ -235,7 +246,9 @@ a:visited {
   text-shadow: unset;
 }
 
-section a:link, section .tufte-underline, section .hover-tufte-underline:hover {
+section a:link,
+section .tufte-underline,
+section .hover-tufte-underline:hover {
   text-decoration: none;
   background: -webkit-gradient(linear, left top, left bottom, from(#fffff8), to(#fffff8)), -webkit-gradient(linear, left top, left bottom, from(#fffff8), to(#fffff8)), -webkit-gradient(linear, left top, left bottom, from(currentColor), to(currentColor));
   background: linear-gradient(#fffff8, #fffff8), linear-gradient(#fffff8, #fffff8), linear-gradient(currentColor, currentColor);
@@ -246,7 +259,9 @@ section a:link, section .tufte-underline, section .hover-tufte-underline:hover {
 }
 
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
-  a:link, .tufte-underline, .hover-tufte-underline:hover {
+  a:link,
+  .tufte-underline,
+  .hover-tufte-underline:hover {
     background-position-y: 87%, 87%, 87%;
   }
 }
@@ -331,12 +346,13 @@ div.table-wrapper {
 
 .sans {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
-  letter-spacing: .03em;
+  letter-spacing: 0.03em;
 }
 
-code, pre > code {
+code,
+pre > code {
   font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
-  font-size: 1.0rem;
+  font-size: 1rem;
   line-height: 1.42;
   -webkit-text-size-adjust: 100%;
   /* Prevent adjustments of font size after orientation changes in iOS. See https://github.com/edwardtufte/tufte-css/issues/81#issuecomment-261953409 */
@@ -349,7 +365,7 @@ code, pre > code {
 h1 > code,
 h2 > code,
 h3 > code {
-  font-size: 0.80em;
+  font-size: 0.8em;
 }
 
 .marginnote > code,
