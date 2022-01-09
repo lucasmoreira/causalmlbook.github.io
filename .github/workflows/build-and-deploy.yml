@@ -27,9 +27,13 @@ jobs:
 
       - name: Build next.js app
         run: npm run build
+        env:
+          NEXT_PUBLIC_BASE_PATH: "/causalmlbooktest.github.io"
 
       - name: Export next.js app
         run: npm run export
+        env:
+          NEXT_PUBLIC_BASE_PATH: "/causalmlbooktest.github.io"
 
       - run: touch ./out/.nojekyll
 
