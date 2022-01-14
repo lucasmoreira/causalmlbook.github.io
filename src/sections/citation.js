@@ -5,12 +5,12 @@ import SectionHeader from "components/section-header";
 import src from "constants/src.data";
 
 const cite =
-  "Goldin, C. D., & Katz, L. F. (2008). The race between education and technology. Belknap Press of Harvard University Press. Matthews, G., Smith, Y., & Knowles, G. (2009). Disaster management in archives, libraries and museums. Ashgate.";
+  "Chernozhuko, V. & Hansen, C. & Spindler, M. & Syrgkanis, V. (2022): Applied Causal Inference Powered by ML and AI";
 
 export default function Citation() {
   return (
     <section sx={styles.workflow}>
-      <Container>
+      <Container sx={{}}>
         <SectionHeader
           sx={styles.SectionHeader}
           slogan="Citation"
@@ -18,7 +18,12 @@ export default function Citation() {
           isWhite={true}
         />
 
-        <Textarea sx={styles.Textarea} defaultValue={cite} rows={3} />
+        <Textarea
+          sx={styles.Textarea}
+          defaultValue={cite}
+          rows={3}
+          readOnly={true}
+        />
       </Container>
     </section>
   );
@@ -39,6 +44,15 @@ const styles = {
     fontSize: 5,
     backgroundColor: "rgba(0,153,255, 0.1)",
     fontFamily: "Roboto",
+    width: "80%",
+    height: "100%",
+    display: "block",
+    mr: "auto",
+    ml: "auto",
+    resize: "none",
+    borderRadius: "20px",
+    borderColor: "secondary",
+    borderWidth: "2px",
   },
   SectionHeader: {
     marginTop: "0px",

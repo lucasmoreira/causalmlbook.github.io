@@ -184,8 +184,7 @@ const styles = {
         fontWeight: 500,
         textDecoration: "none",
         "&:hover": {
-          color: "accent",
-          fontWeight: 700,
+          color: "secondary",
         },
       },
     },
