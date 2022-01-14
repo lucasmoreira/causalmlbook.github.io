@@ -1,4 +1,10 @@
 export default {
+  // External link
+  GitHubLink: "https://github.com/FrederikBornemann/causalmlbooktest.github.io",
+  DoubleMLLink: "https://docs.doubleml.org/stable/",
+  TwitterLink: "https://twitter.com/",
+
+  // Image urls
   BannerBG: "assets/bannerBg.png",
   BannerThumb: "assets/banner-thumb2.png",
   client1: "assets/sponsor/paypal.svg",

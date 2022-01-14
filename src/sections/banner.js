@@ -1,6 +1,7 @@
 /** @jsxImportSource theme-ui */
 import { Container, Flex, Box, Heading, Text, Image, Button } from "theme-ui";
 import { Link } from "components/link";
+import { Link as ScrollLink } from "react-scroll";
 import src from "constants/src.data";
 
 const data = [
@@ -46,9 +47,17 @@ export default function Banner() {
             (DAGs) and structural causal models (SCMs)
           </Text>
           <Flex>
-            <Button variant="whiteButton" aria-label="To The Book">
-              To The Book
-            </Button>
+            <ScrollLink
+              to="book"
+              spy={true}
+              smooth={true}
+              offset={-100}
+              duration={400}
+            >
+              <Button variant="whiteButton" aria-label="To The Book">
+                To The Book
+              </Button>
+            </ScrollLink>
           </Flex>
         </Box>
         <Box sx={styles.banner.imageBox}>

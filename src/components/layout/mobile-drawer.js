@@ -4,32 +4,18 @@ import { Scrollbars } from "react-custom-scrollbars-2";
 import Drawer from "components/drawer";
 import { DrawerContext } from "../../contexts/drawer/drawer.context";
 import { IoMdClose, IoMdMenu } from "react-icons/io";
-import { Link } from "next/link";
 import { Link as ScrollLink } from "react-scroll";
-import {
-  FaFacebookF,
-  FaTwitter,
-  FaGithubAlt,
-  FaDribbble,
-} from "react-icons/fa";
 import menuItemsList from "../../constants/header.data";
-
+import { FaTwitter, FaGithub } from "react-icons/fa";
+import src from "../../constants/src.data";
 const social = [
   {
-    path: "/",
-    icon: <FaFacebookF />,
-  },
-  {
-    path: "/",
+    path: src.TwitterLink,
     icon: <FaTwitter />,
   },
   {
-    path: "/",
-    icon: <FaGithubAlt />,
-  },
-  {
-    path: "/",
-    icon: <FaDribbble />,
+    path: src.GitHubLink,
+    icon: <FaGithub />,
   },
 ];
 
@@ -46,9 +32,9 @@ const MobileDrawer = () => {
   const menuItems = menuItemsList.map(function (menuItem, i) {
     if (menuItem.external) {
       return (
-        <Link href={menuItem.path} passHref={true} key={i}>
+        <a href={menuItem.path} passHref={true} key={i}>
           {menuItem.label}
-        </Link>
+        </a>
       );
     } else {
       return (
@@ -89,7 +75,7 @@ const MobileDrawer = () => {
             <Box sx={styles.social}>
               {social.map(({ path, icon }, i) => (
                 <Box as="span" key={i} sx={styles.social.icon}>
-                  <Link to={path}>{icon}</Link>
+                  <a href={path}>{icon}</a>
                 </Box>
               ))}
             </Box>
@@ -180,10 +166,13 @@ const styles = {
       alignItems: "center",
       justifyContent: "center",
       color: "text",
-      fontSize: 14,
-      mr: "15px",
+      fontSize: ["30px", "30px", "30px", "30px", "30px"],
+      mr: 7,
       transition: "all 0.25s",
       cursor: "pointer",
+      a: {
+        color: "text",
+      },
       ":last-child": {
         mr: "0",
       },

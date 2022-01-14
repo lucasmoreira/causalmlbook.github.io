@@ -1,8 +1,16 @@
 /** @jsxImportSource theme-ui */
-import { Heading, Box, Container, Text, Image } from "theme-ui";
+import {
+  Heading,
+  Box,
+  Container,
+  Text,
+  Image,
+  Link as SocialLink,
+} from "theme-ui";
 import { Link } from "components/link";
 import menuItems from "../../constants/footer.data";
 import src from "constants/src.data";
+import { FaTwitter, FaGithub } from "react-icons/fa";
 
 export default function Footer() {
   return (
@@ -25,18 +33,23 @@ export default function Footer() {
             </Box>
           ))}
         </Box>
+      </Container>
+      <Container sx={{ display: "flex", justifyContent: "center", mb: 2 }}>
         <Image
           src={src.LogoDark}
           sx={{
-            display: "block",
-            mr: "auto",
-            ml: "auto",
-            mb: 2,
+            flex: 1,
             height: ["15px", null, null, "20px"],
           }}
           alt="Logo"
         />
+        <Container sx={{ flex: 1, textAlign: "center" }}>
+          <SocialLink href={src.GitHubLink} sx={{ color: "text" }}>
+            <FaGithub sx={{ fontSize: [5, 6, 7, 8, 9] }} />
+          </SocialLink>
+        </Container>
       </Container>
+
       <Text sx={styles.footer.copyright}>
         All right reserved
         <Link path="/" target="_blank">
@@ -52,9 +65,6 @@ const styles = {
     container: {
       width: "100%",
       alignItems: "stretch",
-      marginRight: "auto",
-      marginLeft: "auto",
-      display: "block",
     },
     footerTopArea: {
       borderTop: "1px solid",
@@ -66,6 +76,8 @@ const styles = {
       px: [0, null, null, null, 4],
     },
     menus: {
+      mr: "auto",
+      ml: "auto",
       width: ["50%", null, null, "25%"],
       display: "flex",
       flexDirection: "column",

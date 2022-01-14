@@ -30,7 +30,6 @@ export default function Book() {
         </Button>
       </Container>
 
-      <Divider />
       <Container sx={styles.tableofcontents}>
         <ul>
           <Card>
@@ -176,8 +175,10 @@ const styles = {
     display: "block",
     marginRight: "auto",
     marginLeft: "auto",
+    pl: 0,
     ul: {
       listStyle: "none",
+      pl: 0,
       a: {
         color: "text",
         fontSize: 2,

@@ -78,12 +78,9 @@ const responsive = {
 
 export default function Notebooks() {
   return (
-    <section id="notebooks" sx={{ variant: "section.notebooks" }}>
+    <section id="labs" sx={{ variant: "section.notebooks" }}>
       <Container sx={{ my: 8 }}>
-        <SectionHeader
-          slogan="Notebooks"
-          title="Take a look at some notebooks"
-        />
+        <SectionHeader slogan="Notebooks" title="Take a look at our Labs" />
       </Container>
       <Box sx={styles.carouselWrapper}>
         <Carousel
@@ -116,14 +113,13 @@ export default function Notebooks() {
                 </Heading>
                 <Divider />
                 <Text sx={styles.description}>{item.description}</Text>
-                <div className="footer-container">
-                  <div className="card-footer">
-                    <div className="image">
-                      <Image src={item.site} alt="Client Image" />
-                    </div>
-                    <div className="image">
-                      <Image sx={styles.LabLogo} src={item.lab} />
-                    </div>
+                <Divider />
+                <div className="card-footer">
+                  <div className="image">
+                    <Image src={item.site} alt="Client Image" />
+                  </div>
+                  <div className="image">
+                    <Image sx={styles.LabLogo} src={item.lab} />
                   </div>
                 </div>
               </Box>

@@ -1,17 +1,14 @@
+import src from "constants/src.data";
 export default [
   {
     header: "About us",
     items: [
       {
-        path: "/",
+        path: src.GitHubLink,
         label: "GitHub",
       },
       {
-        path: "/",
-        label: "Twitter",
-      },
-      {
-        path: "/",
+        path: src.DoubleMLLink,
         label: "DoubleML",
       },
       {

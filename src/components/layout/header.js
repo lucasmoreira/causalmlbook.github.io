@@ -30,7 +30,7 @@ export default function Header({ className }) {
           spy={true}
           smooth={true}
           offset={-70}
-          duration={500}
+          duration={400}
           key={i}
         >
           {menuItem.label}
@@ -49,13 +49,21 @@ export default function Header({ className }) {
             {menuItems}
           </Flex>
 
-          <Button
-            className="book__btn"
-            variant="secondary"
-            aria-label="To The Book"
+          <ScrollLink
+            to="book"
+            spy={true}
+            smooth={true}
+            offset={-100}
+            duration={400}
           >
-            To The Book
-          </Button>
+            <Button
+              className="book__btn"
+              variant="secondary"
+              aria-label="To The Book"
+            >
+              To The Book
+            </Button>
+          </ScrollLink>
 
           <MobileDrawer />
         </Container>

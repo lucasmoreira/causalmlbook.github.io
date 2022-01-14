@@ -5,23 +5,18 @@ export default [
     external: false,
   },
   {
-    path: "book",
-    label: "Book",
+    path: "citation",
+    label: "Citation",
     external: false,
   },
   {
-    path: "notebooks",
-    label: "Notebooks",
+    path: "labs",
+    label: "Labs",
     external: false,
   },
   {
-    path: "https://docs.doubleml.org/stable",
+    path: "doubleml",
     label: "DoubleML",
-    external: true,
-  },
-  {
-    path: "https://github.com/FrederikBornemann/causalmlbooktest.github.io",
-    label: "GitHub",
-    external: true,
+    external: false,
   },
 ];

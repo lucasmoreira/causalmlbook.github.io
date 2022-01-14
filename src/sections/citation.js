@@ -9,7 +9,7 @@ const cite =
 
 export default function Citation() {
   return (
-    <section sx={styles.workflow}>
+    <section id="citation" sx={styles.workflow}>
       <Container sx={{}}>
         <SectionHeader
           sx={styles.SectionHeader}
@@ -21,7 +21,7 @@ export default function Citation() {
         <Textarea
           sx={styles.Textarea}
           defaultValue={cite}
-          rows={3}
+          rows={2}
           readOnly={true}
         />
       </Container>
@@ -41,12 +41,12 @@ const styles = {
   },
   Textarea: {
     color: "white",
-    fontSize: 5,
+    fontSize: [2, null, null, null, 4],
     backgroundColor: "rgba(0,153,255, 0.1)",
     fontFamily: "Roboto",
     fontWeight: 300,
     width: "80%",
-    height: "100%",
+    height: ["140px", "120px", "90px", "90px", "110px"],
     display: "block",
     mr: "auto",
     ml: "auto",
