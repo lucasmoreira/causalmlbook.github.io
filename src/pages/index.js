@@ -6,7 +6,7 @@ import SEO from "components/seo";
 import Banner from "sections/banner";
 import Book from "sections/book";
 import Citation from "sections/citation";
-import Notebooks from "sections/notebooks";
+import Labs from "sections/labs";
 
 export default function IndexPage() {
   return (
@@ -17,7 +17,7 @@ export default function IndexPage() {
           <Banner />
           <Book />
           <Citation />
-          <Notebooks />
+          <Labs />
         </Layout>
       </StickyProvider>
     </ThemeProvider>

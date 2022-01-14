@@ -76,11 +76,11 @@ const responsive = {
   },
 };
 
-export default function Notebooks() {
+export default function Labs() {
   return (
-    <section id="labs" sx={{ variant: "section.notebooks" }}>
+    <section id="labs" sx={{ variant: "section.labs" }}>
       <Container sx={{ my: 8 }}>
-        <SectionHeader slogan="Notebooks" title="Take a look at our Labs" />
+        <SectionHeader slogan="Labs" title="Take a look at our Labs" />
       </Container>
       <Box sx={styles.carouselWrapper}>
         <Carousel
