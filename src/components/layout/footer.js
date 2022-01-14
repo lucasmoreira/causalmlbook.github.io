@@ -28,7 +28,7 @@ export default function Footer() {
       <Text sx={styles.footer.copyright}>
         All right reserved
         <Link path="/" target="_blank">
-          *Link*
+          - CausalML
         </Link>
       </Text>
     </footer>
@@ -40,6 +40,9 @@ const styles = {
     container: {
       width: "100%",
       alignItems: "stretch",
+      marginRight: "auto",
+      marginLeft: "auto",
+      display: "block",
     },
     footerTopArea: {
       borderTop: "1px solid",
@@ -83,6 +86,7 @@ const styles = {
       },
     },
     copyright: {
+      display: "inline-block",
       fontSize: ["14px", null, 1],
       width: "100%",
       textAlign: "center",

@@ -3,16 +3,18 @@ export default {
   colors: {
     text: "#343D48", // body color and primary color
     text_secondary: "#02073E", // secondary body color
-    heading: "#0F2137", // primary heading color
+    heading: "#244886", // primary heading color
     heading_secondary: "#0F2137", // heading color
     background: "#FFFFFF", // body background color
     background_secondary: "#F9FBFD", // secondary background color
     border_color: "#E5ECF4", // border color
-    yellow: "#FFA740", // border color
-    primary: "#EA3A60", // primary button and link color
-    secondary: "#2563FF", // secondary color - can be used for hover states
-    muted: "#E4E4E4", // muted color
+    primary: "#1F3E76", // primary button and link color
+    secondary: "#25CB9E", // secondary color - can be used for hover states
+    muted: "#7B8188", // muted color
     accent: "#609", // a contrast color for emphasizing UI
+    yellow: "#F6C416",
+    predictive: "#2A52BE",
+    causal: "#DC143C",
 
     // highlight	a background color for highlighting text
     // modes: {
@@ -85,57 +87,55 @@ export default {
   },
   section: {
     keyFeature: {
-      pt: [8, null, 9, null, null, 10],
-      pb: ["90px", null, 9, null, null, 10, null, "165px"],
+      py: [8, null, 9, null, null, 10],
     },
     feature: {
-      pb: [8, null, 9, null, null, 10, null, "170px"],
+      py: [8, null, 9, null, null, 10],
     },
-    news: {
-      pb: [8, null, 9, null, null, 10, null, "170px"],
+    partner: {
+      pt: [2, null, null, 5],
+      pb: [8, null, 9, null, null, 10],
     },
-    coreFeature: {
-      pb: [8, null, 9, null, null, 10, null, "170px"],
+    book: {
+      py: [8, null, 9, null, null, 10],
+    },
+    notebooks: {
+      py: [8, null, 9, null, null, 10],
+    },
+
+    securePayment: {
       overflow: "hidden",
+      position: "relative",
+      pt: 9,
     },
-    testimonial: {
-      pt: [8, null, 8, "70px", null, 8, null, "145px"],
-      pb: ["90px", null, 9, null, null, 10, null, "190px"],
-      overflow: "hidden",
-    },
-    services: {
-      pb: ["90px", null, 9, null, null, 10, null, "150px"],
-    },
-    pricing: {
-      pt: [8, null, 9, null, null, 10, null, "180px"],
-      pb: ["90px", null, 9, null, null, 10, null, "180px"],
+    faq: {
+      py: [8, null, 9, null, null, 10],
     },
   },
   sectionHeader: {
-    width: ["100%", null, "540px"],
+    width: "100%",
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    mt: ["-3px", null, -1],
-    marginBottom: ["50px", null, "60px", null, null, "65px", null, "80px"],
-    mx: "auto",
+    mt: 0,
+    marginBottom: ["25px", null, "25px", null, "25px", "25px"],
     title: {
       fontSize: ["24px", null, "28px", null, null, "32px", null, "36px"],
-      color: "heading",
-      lineHeight: [1.3, null, null, 1.25],
+      color: "heading_secondary",
+      lineHeight: [1.3, null, null, 1.2],
       textAlign: "center",
       fontWeight: "700",
       letterSpacing: "-.5px",
     },
 
     subTitle: {
-      fontSize: [0, "13px", null, "14px"],
-      color: "primary",
+      fontSize: [0, null, "14px"],
+      color: "heading",
       textAlign: "center",
       letterSpacing: ["1.5px", null, "2px"],
       textTransform: "uppercase",
       fontWeight: "700",
-      mb: 2,
+      mb: "8px",
       lineHeight: 1.5,
     },
   },
@@ -144,41 +144,41 @@ export default {
       fontFamily: "heading",
       lineHeight: "heading",
       fontWeight: "heading",
-      fontSize: [4],
-      letterSpacing: "-.55px",
+      fontSize: 4,
+      letterSpacing: "heading",
       color: "heading",
     },
     heroPrimary: {
-      color: "heading",
+      color: "white",
       fontSize: [
-        "32px",
-        "36px",
-        "42px",
         "40px",
-        "42px",
         "52px",
-        "58px",
+        "60px",
+        "48px",
+        "52px",
+        "60px",
         "66px",
+        "78px",
       ],
-      lineHeight: [1.3, null, null, null, null, 1.2],
+      lineHeight: 1.2,
       fontWeight: 700,
-      mb: [4, null, null, null, null, 5],
+      mb: [5, null, null, null, "30px"],
     },
     heroSecondary: {
-      fontSize: [2, null, "17px", null, null, "19px", 4],
-      lineHeight: [1.9, null, null, 2],
+      color: "white",
+      fontSize: [2, 3, 4, "17px", null, 3, "19px", 4],
+      lineHeight: [2, null, null, null, 2.2],
       fontWeight: "body",
-      mb: 5,
-      px: [0, null, 5, 6, null, 8, 9],
-      color: "heading",
+      pr: [0, null, null, null, null, "100px", null, "125px"],
+      mb: ["35px", null, null, null, "40px", null, null, 7],
     },
     title: {
       // extends the text.heading styles
       variant: "text.heading",
       fontWeight: "bold",
-      fontSize: [3, null, 4],
-      lineHeight: 1.25,
-      mb: 1,
+      fontSize: 18,
+      lineHeight: "30px",
+      color: "#0F2137",
     },
     lead: {
       fontSize: 40,
@@ -197,10 +197,21 @@ export default {
       color: "#00A99D",
       lineHeight: "40px",
     },
+    predictive: {
+      color: "predictive",
+      fontSize: 1,
+      fontWeight: "bold",
+    },
+    causal: {
+      color: "causal",
+      fontSize: 1,
+      fontWeight: "bold",
+    },
   },
   links: {
     default: {
       cursor: "pointer",
+      color: "white",
     },
     bold: {
       fontWeight: "bold",
@@ -209,17 +220,6 @@ export default {
       display: ["none", null, "inline-block"],
       px: 25,
       fontWeight: "normal",
-    },
-    blog: {
-      display: "block",
-      px: 0,
-      color: "inherit",
-      textDecoration: "none",
-      fontSize: "inherit",
-      transition: "color 0.25s",
-      "&:hover": {
-        color: "primary",
-      },
     },
     footer: {
       display: "block",
@@ -246,9 +246,9 @@ export default {
     // you can reference other values defined in the theme
     defaultBtn: {
       borderRadius: "45px",
-      fontSize: ["14px", null, null, 2],
-      letterSpacings: "-0.15px",
-      padding: ["12px 20px", null, "15px 30px"],
+      fontSize: ["14px", 1, null, null, 2],
+      letterSpacings: ["-0.5px", null, null, null, "-0.15px"],
+      padding: ["11px 20px 10px", null, null, null, "13px 30px"],
       fontFamily: "body",
       cursor: "pointer",
       lineHeight: 1.2,
@@ -263,7 +263,7 @@ export default {
       color: "white",
       bg: "primary",
       "&:hover": {
-        boxShadow: "rgba(233, 76, 84, 0.57) 0px 9px 20px -5px",
+        boxShadow: "rgba(31, 62, 118, 0.57) 0px 9px 20px -5px",
       },
     },
     whiteButton: {
@@ -276,21 +276,20 @@ export default {
     },
     secondary: {
       variant: "buttons.defaultBtn",
-      border: "2px solid",
-      borderColor: "primary",
-      color: "primary",
-      bg: "transparent",
-      padding: ["10px 15px", null, "15px 30px"],
+      border: "1.5px solid white",
+      backgroundColor: "transparent",
+      color: "white",
       "&:hover": {
-        color: "white",
-        bg: "primary",
+        bg: "white",
+        color: "heading_secondary",
       },
     },
     textButton: {
       variant: "buttons.defaultBtn",
       backgroundColor: "transparent",
-      cursor: "pointer",
       color: "white",
+      display: "flex",
+      alignItems: "center",
       svg: {
         fontSize: [4, 6],
         mr: 2,
@@ -361,9 +360,12 @@ export default {
       lineHeight: "body",
       fontWeight: "body",
       fontSmoothing: "antialiased",
-      // Modal Global Style
       ".modal-video-close-btn": {
         cursor: "pointer",
+        top: "-25px",
+        right: "-25px",
+        width: " 25px",
+        height: "25px",
       },
       ".modal-video-movie-wrap": {
         margin: 6,

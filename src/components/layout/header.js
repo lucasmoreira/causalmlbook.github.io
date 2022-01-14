@@ -4,15 +4,21 @@ import { keyframes } from "@emotion/react";
 import { Link as ScrollLink } from "react-scroll";
 import Link from "next/link";
 import Logo from "components/logo";
-import LogoDark from "assets/logo.svg";
-// import MobileDrawer from "./mobile-drawer";
+import { DrawerProvider } from "../../contexts/drawer/drawer.provider";
+import MobileDrawer from "./mobile-drawer";
 import menuItemsList from "../../constants/header.data";
+import src from "constants/src.data";
 
 export default function Header({ className }) {
   const menuItems = menuItemsList.map(function (menuItem, i) {
     if (menuItem.external) {
       return (
-        <Link href={menuItem.path} passHref={true} key={i}>
+        <Link
+          href={menuItem.path}
+          passHref={true}
+          key={i}
+          sx={{ color: "white" }}
+        >
           {menuItem.label}
         </Link>
       );
@@ -34,14 +40,27 @@ export default function Header({ className }) {
   });
 
   return (
-    <header sx={styles.header} className={className}>
-      <Container sx={styles.container}>
-        <Logo src={LogoDark} />
-        <Flex as="nav" sx={styles.nav}>
-          {menuItems}
-        </Flex>
-      </Container>
-    </header>
+    <DrawerProvider>
+      <header sx={styles.header} className={className} id="header">
+        <Container sx={styles.container}>
+          <Logo src={className === "sticky" ? src.LogoDark : src.LogoWhite} />
+
+          <Flex as="nav" sx={styles.nav}>
+            {menuItems}
+          </Flex>
+
+          <Button
+            className="book__btn"
+            variant="secondary"
+            aria-label="To The Book"
+          >
+            To The Book
+          </Button>
+
+          <MobileDrawer />
+        </Container>
+      </header>
+    </DrawerProvider>
   );
 }
 
@@ -50,7 +69,6 @@ const positionAnim = keyframes`
     position: fixed;
     opacity: 1;
   }
-
   to {
     position: absolute;
     opacity: 1;
@@ -60,17 +78,20 @@ const positionAnim = keyframes`
 
 const styles = {
   header: {
-    color: "text",
-    fontWeight: "body",
+    color: "white",
+    fontWeight: "normal",
     py: 4,
     width: "100%",
     position: "absolute",
     top: 0,
     left: 0,
     backgroundColor: "transparent",
-    transition: "all 0.4s ease",
+    transition: "all 0.5s ease",
     animation: `${positionAnim} 0.4s ease`,
-    ".donate__btn": {
+    a: {
+      color: "white",
+    },
+    ".book__btn": {
       flexShrink: 0,
       mr: [15, 20, null, null, 0],
       ml: ["auto", null, null, null, 0],
@@ -81,8 +102,17 @@ const styles = {
       color: "#000000",
       boxShadow: "0 1px 2px rgba(0, 0, 0, 0.06)",
       py: 3,
-      "nev > a": {
+      "nav > a": {
         color: "text",
+      },
+      ".book__btn": {
+        borderColor: "primary",
+        color: "primary",
+        "&:hover": {
+          boxShadow: "rgba(31, 62, 118, 0.57) 0px 9px 20px -5px",
+          backgroundColor: "primary",
+          color: "white",
+        },
       },
     },
   },
@@ -98,19 +128,14 @@ const styles = {
       display: "block",
     },
     a: {
-      color: "text",
       textDecoration: "none",
-      fontSize: 2,
-      fontWeight: "body",
-      px: 5,
+      fontSize: "16px",
+      fontWeight: "400",
+      px: 25,
       cursor: "pointer",
       lineHeight: "1.2",
-      transition: "all 0.15s",
-      "&:hover": {
-        color: "primary",
-      },
       "&.active": {
-        color: "primary",
+        color: "secondary",
       },
     },
   },
