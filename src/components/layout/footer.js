@@ -1,7 +1,8 @@
 /** @jsxImportSource theme-ui */
-import { Heading, Box, Container, Text } from "theme-ui";
+import { Heading, Box, Container, Text, Image } from "theme-ui";
 import { Link } from "components/link";
 import menuItems from "../../constants/footer.data";
+import src from "constants/src.data";
 
 export default function Footer() {
   return (
@@ -24,6 +25,11 @@ export default function Footer() {
             </Box>
           ))}
         </Box>
+        <Image
+          src={src.OnlyLogo}
+          sx={{ display: "block", mr: "auto", ml: "auto" }}
+          alt="Logo"
+        />
       </Container>
       <Text sx={styles.footer.copyright}>
         All right reserved

@@ -33,9 +33,17 @@ export default function Banner() {
             Causal ML Book
           </Heading>
           <Text as="p" variant="heroSecondary">
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-            erat, sed diam voluptua. At vero eos et accusam et.
+            An introduction to the emerging fusion of modern statistical
+            (machine learning) inference and
+            <Text variant="heroSecondary" color="secondary">
+              {" "}
+              causal inference methods.
+            </Text>
+            <br />
+            <br />
+            The book introduces ideas from classical structural equation models
+            (SEMs) and their modern AI equivalent, directed acyclical graphs
+            (DAGs) and structural causal models (SCMs)
           </Text>
           <Flex>
             <Button variant="whiteButton" aria-label="To The Book">
