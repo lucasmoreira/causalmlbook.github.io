@@ -10,4 +10,7 @@ export default {
   PatternBG: "assets/patternBG.png",
   Avatar: "assets/testimonial/avatar1.png",
   Kaggle: "assets/kaggle.svg",
+  Colab: "assets/colab.svg",
+  Python: "assets/python.svg",
+  R: "assets/r.svg",
 };

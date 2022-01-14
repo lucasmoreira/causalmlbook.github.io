@@ -32,7 +32,7 @@ export default function Citation() {
 const styles = {
   workflow: {
     backgroundColor: "primary",
-    backgroundImage: `url(${src.PatternBG})`,
+    backgroundImage: `url(${src.BannerBG})`,
     backgroundRepeat: `no-repeat`,
     backgroundPosition: "center center",
     backgroundSize: "cover",
@@ -44,6 +44,7 @@ const styles = {
     fontSize: 5,
     backgroundColor: "rgba(0,153,255, 0.1)",
     fontFamily: "Roboto",
+    fontWeight: 300,
     width: "80%",
     height: "100%",
     display: "block",

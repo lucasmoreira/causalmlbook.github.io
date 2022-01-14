@@ -1,5 +1,14 @@
 /** @jsxImportSource theme-ui */
-import { Container, Heading, Text, Box, Image, Button, Link } from "theme-ui";
+import {
+  Container,
+  Heading,
+  Text,
+  Box,
+  Image,
+  Button,
+  Link,
+  Divider,
+} from "theme-ui";
 import SectionHeader from "components/section-header";
 import ButtonGroup from "components/button-group";
 import Carousel from "react-multi-carousel";
@@ -11,8 +20,8 @@ const data = [
     title: "DML for Conditional Average Treatment Effect",
     description:
       "This is a simple demonstration of Debiased Machine Learning estimator for the Conditional Average Treatment Effect. Goal is to estimate the effect of 401(k) eligibility on net financial assets for each value of income",
-    avatar: src.Kaggle,
-    name: "Victor Chernozhukov",
+    site: src.Kaggle,
+    lab: src.R,
     link: "https://www.kaggle.com/victorchernozhukov/dml-for-conditional-average-treatment-effect?scriptVersionId=66048820",
   },
   {
@@ -20,8 +29,8 @@ const data = [
     title: "DML for ATE and LATE of 401(k) on Wealth",
     description:
       "As a practical illustration of the methods developed in this lecture, we consider estimation of the effect of 401(k) eligibility and participation on accumulated assets. 401(k) plans are pension accounts sponsored by employers.",
-    avatar: src.Kaggle,
-    name: "Jannis Kueck",
+    site: src.Colab,
+    lab: src.Python,
     link: "https://www.kaggle.com/janniskueck/dml-for-ate-and-late-of-401-k-on-wealth?scriptVersionId=57642758",
   },
   {
@@ -29,8 +38,8 @@ const data = [
     title: "DML inference for gun ownership",
     description:
       "A Case Study: The Effect of Gun Ownership on Gun-Homicide Rates. Since our goal is to estimate the effect of gun ownership after controlling for a rich set county characteristics, we next include the controls.",
-    avatar: src.Kaggle,
-    name: "Jannis Kueck",
+    site: src.Kaggle,
+    lab: src.Python,
     link: "https://www.kaggle.com/janniskueck/dml-inference-for-gun-ownership",
   },
   {
@@ -38,8 +47,8 @@ const data = [
     title: "OLS and lasso for gender wage gap inference",
     description:
       "What is the difference in predicted wages between men and women with the same job-relevant characteristics?",
-    avatar: src.Kaggle,
-    name: "Jannis Kueck",
+    site: src.Colab,
+    lab: src.R,
     link: "https://www.kaggle.com/janniskueck/ols-and-lasso-for-gender-wage-gap-inference",
   },
 ];
@@ -101,19 +110,20 @@ export default function Notebooks() {
         >
           {data.map((item) => (
             <Link href={item.link} sx={styles.Link}>
-              <Box sx={styles.reviewCard} key={`testimonial--key${item.id}`}>
+              <Box sx={styles.Notebook} key={`notebook--key${item.id}`}>
                 <Heading as="h3" sx={styles.title}>
                   {item.title}
                 </Heading>
+                <Divider />
                 <Text sx={styles.description}>{item.description}</Text>
-                <div className="card-footer">
-                  <div className="image">
-                    <Image src={item.avatar} alt="Client Image" />
-                  </div>
-                  <div className="reviewer-info">
-                    <Heading as="h4" sx={styles.heading}>
-                      {item.name}
-                    </Heading>
+                <div className="footer-container">
+                  <div className="card-footer">
+                    <div className="image">
+                      <Image src={item.site} alt="Client Image" />
+                    </div>
+                    <div className="image">
+                      <Image sx={styles.LabLogo} src={item.lab} />
+                    </div>
                   </div>
                 </div>
               </Box>
@@ -124,9 +134,9 @@ export default function Notebooks() {
       <Button
         sx={styles.NotebooksBtn}
         variant="secondary"
-        aria-label="View all Notebooks"
+        aria-label="View all notebooks"
       >
-        View all Notebooks
+        View all notebooks
       </Button>
     </section>
   );
@@ -165,17 +175,17 @@ const styles = {
       },
     },
   },
-  reviewCard: {
-    boxShadow: "0px 0px 1px rgba(38, 78, 118, 0.35)",
+  Notebook: {
+    boxShadow: "0px 0px 3px rgba(38, 78, 118, 0.25)",
     transition: "all 0.3s",
     borderRadius: "6px",
     p: [
-      "30px 20px 35px",
-      "30px 25px 35px",
-      "30px 20px 35px",
-      "35px 30px 40px 40px",
-      "30px 30px 35px",
-      "35px 30px 40px 40px",
+      "30px 20px 10px",
+      "30px 25px 10px",
+      "30px 20px 10px",
+      "35px 30px 10px 40px",
+      "30px 30px 10px",
+      "35px 30px 10px 40px",
     ],
     bg: "white",
     textAlign: "left",
@@ -187,44 +197,22 @@ const styles = {
       "30px 20px 40px",
     ],
     "&:hover": {
-      boxShadow: "0px 6px 47px rgba(38, 78, 118, 0.1)",
+      boxShadow: "0px 6px 37px rgba(38, 78, 118, 0.15)",
     },
-    ".rating": {
-      mb: [1, null, null, 2],
-      ul: {
-        pl: 0,
-        listStyle: "none",
-        mb: 0,
-        display: "flex",
-      },
-      svg: {
-        marginRight: "2px",
-        "&:last-of-type": {
-          marginRight: 0,
-        },
-      },
-      ".star": {
-        color: "yellow",
-        mr: "1px",
-      },
-      ".star-o": {
-        color: "#ddd",
-        mr: "1px",
-      },
-    },
+    ".footer-container": {},
     ".card-footer": {
-      display: "flex",
+      display: "grid",
+      gridTemplateColumns: "50% 50%",
+      mr: "auto",
+      ml: "auto",
       alignItems: "center",
-      marginTop: [5, null, null, "33px"],
+      pb: 0,
+      mt: 2,
       ".image": {
-        flexShrink: 0,
-        mr: [3, null, null, 4],
-        display: "flex",
+        textAlign: "center",
         img: {
-          width: "55px",
-          height: "55px",
-          borderRadius: "50%",
-          objectFit: "cover",
+          width: "45px",
+          height: "45px",
         },
       },
     },
