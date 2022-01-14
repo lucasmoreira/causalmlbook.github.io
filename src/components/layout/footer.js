@@ -27,7 +27,12 @@ export default function Footer() {
         </Box>
         <Image
           src={src.OnlyLogo}
-          sx={{ display: "block", mr: "auto", ml: "auto" }}
+          sx={{
+            display: "block",
+            mr: "auto",
+            ml: "auto",
+            height: ["35px", null, null, "50px"],
+          }}
           alt="Logo"
         />
       </Container>

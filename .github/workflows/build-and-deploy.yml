@@ -2,7 +2,7 @@ name: Build & Deploy
 
 on:
   push:
-    branches: [next-js]
+    branches: [main]
 
 jobs:
   build:
