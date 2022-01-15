@@ -12,8 +12,9 @@ import {
 import SectionHeader from "components/section-header";
 import ButtonGroup from "components/button-group";
 import Carousel from "react-multi-carousel";
-
 import data from "constants/labs.data";
+
+const prefix = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
 const responsive = {
   desktop: {
@@ -89,7 +90,7 @@ export default function Labs() {
           ))}
         </Carousel>
       </Box>
-      <Link href="/labs" sx={{ textDecoration: "none" }}>
+      <Link href={prefix + "/labs"} sx={{ textDecoration: "none" }}>
         <Button
           sx={styles.NotebooksBtn}
           variant="secondary"
