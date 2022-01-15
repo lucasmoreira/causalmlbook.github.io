@@ -42,7 +42,7 @@ const styles = {
   Textarea: {
     color: "white",
     fontSize: [2, null, null, null, 4],
-    backgroundColor: "rgba(0,153,255, 0.1)",
+    backgroundColor: "rgba(16, 15, 56, 0.4)",
     fontFamily: "Roboto",
     fontWeight: 300,
     width: "80%",

@@ -99,8 +99,11 @@ export default {
     book: {
       py: [8, null, 9, null, null, 10],
     },
-    labs: {
+    notebooks: {
       py: [8, null, 9, null, null, 10],
+    },
+    labs: {
+      pb: 4,
     },
 
     securePayment: {

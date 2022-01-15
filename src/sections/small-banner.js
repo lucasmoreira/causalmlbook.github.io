@@ -1,47 +1,11 @@
 /** @jsxImportSource theme-ui */
-import { Container, Flex, Box, Heading, Text, Image, Button } from "theme-ui";
-import { Link as ScrollLink } from "react-scroll";
+import { Container } from "theme-ui";
 import src from "constants/src.data";
 
 export default function Banner() {
   return (
     <section sx={styles.banner} id="home">
-      <Container sx={styles.banner.container}>
-        <Box sx={styles.banner.contentBox}>
-          <Heading as="h1" variant="heroPrimary">
-            Causal ML Book
-          </Heading>
-          <Text as="p" variant="heroSecondary">
-            An introduction to the emerging fusion of modern statistical
-            (machine learning) inference and
-            <Text variant="heroSecondary" color="secondary">
-              {" "}
-              causal inference methods.
-            </Text>
-            <br />
-            <br />
-            The book introduces ideas from classical structural equation models
-            (SEMs) and their modern AI equivalent, directed acyclical graphs
-            (DAGs) and structural causal models (SCMs)
-          </Text>
-          <Flex>
-            <ScrollLink
-              to="book"
-              spy={true}
-              smooth={true}
-              offset={-100}
-              duration={400}
-            >
-              <Button variant="whiteButton" aria-label="To The Book">
-                To The Book
-              </Button>
-            </ScrollLink>
-          </Flex>
-        </Box>
-        <Box sx={styles.banner.imageBox}>
-          <Image src={src.BannerThumb} alt="banner" />
-        </Box>
-      </Container>
+      <Container sx={styles.banner.container}></Container>
     </section>
   );
 }
@@ -53,9 +17,9 @@ const styles = {
     backgroundRepeat: `no-repeat`,
     backgroundPosition: "top left",
     backgroundSize: "cover",
-    borderBottomRightRadius: [100, 150, null, null, null, 250],
-    pt: ["150px", null, null, null, null, null, "140px", "130px"],
-    pb: ["100px", null, null, "110px", null, 10, "150px"],
+    borderBottomRightRadius: [80, 150, null, null, null, 250],
+    pt: "50px",
+    pb: ["40px", null, null, "40px", "50px"],
     mb: 7,
     backgroundColor: "primary",
     container: {
