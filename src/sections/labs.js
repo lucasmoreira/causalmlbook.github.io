@@ -90,7 +90,7 @@ export default function Labs() {
           ))}
         </Carousel>
       </Box>
-      <Link href={prefix + "/labs"} sx={{ textDecoration: "none" }}>
+      <Link href={"labs"} sx={{ textDecoration: "none" }}>
         <Button
           sx={styles.NotebooksBtn}
           variant="secondary"

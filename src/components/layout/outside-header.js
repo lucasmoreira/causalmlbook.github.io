@@ -4,13 +4,15 @@ import { keyframes } from "@emotion/react";
 import Logo from "components/logo";
 import src from "constants/src.data";
 
+const prefix = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
 export default function Header({ className }) {
   return (
     <header sx={styles.header} className={className} id="header">
       <Container sx={styles.container}>
         <Logo src={className === "sticky" ? src.LogoDark : src.LogoWhite} />
 
-        <Link href="/">
+        <Link href="index">
           <Button
             className="book__btn"
             variant="secondary"
