@@ -61,7 +61,7 @@ export default function Header({ className }) {
               variant="secondary"
               aria-label="To The Book"
             >
-              To The Book
+              To the PDF
             </Button>
           </ScrollLink>
 
@@ -118,7 +118,9 @@ const styles = {
         color: "primary",
         "&:hover": {
           boxShadow: "rgba(31, 62, 118, 0.57) 0px 9px 20px -5px",
-          backgroundColor: "primary",
+          background: "primary",
+          background:
+            "linear-gradient(40deg, rgba(3,8,48,1) 0%, rgba(9,31,111,1) 53%, rgba(16,65,141,1) 100%)",
           color: "white",
         },
       },

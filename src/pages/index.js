@@ -7,6 +7,7 @@ import Banner from "sections/banner";
 import Book from "sections/book";
 import Citation from "sections/citation";
 import Labs from "sections/labs";
+import DoubleMl from "sections/doubleml";
 
 export default function IndexPage() {
   return (
@@ -18,6 +19,7 @@ export default function IndexPage() {
           <Book />
           <Citation />
           <Labs />
+          <DoubleMl />
         </Layout>
       </StickyProvider>
     </ThemeProvider>

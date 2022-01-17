@@ -2,6 +2,7 @@ export default {
   // External link
   GitHubLink: "https://github.com/FrederikBornemann/causalmlbooktest.github.io",
   DoubleMLLink: "https://docs.doubleml.org/stable/",
+  DoubleMLGitHubLink: "https://github.com/DoubleML/doubleml-for-py",
   TwitterLink: "https://twitter.com/",
 
   // Image urls

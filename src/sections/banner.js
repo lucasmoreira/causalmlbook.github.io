@@ -1,5 +1,14 @@
 /** @jsxImportSource theme-ui */
-import { Container, Flex, Box, Heading, Text, Image, Button } from "theme-ui";
+import {
+  Container,
+  Flex,
+  Box,
+  Heading,
+  Text,
+  Image,
+  Button,
+  Divider,
+} from "theme-ui";
 import { Link as ScrollLink } from "react-scroll";
 import src from "constants/src.data";
 
@@ -11,6 +20,15 @@ export default function Banner() {
           <Heading as="h1" variant="heroPrimary">
             Causal ML Book
           </Heading>
+          <span
+            sx={{
+              height: "4px",
+              width: ["40vw", "40vw", "40vw", "30vw", "20vw"],
+              backgroundColor: "secondary",
+              borderRadius: "2px",
+              mb: 4,
+            }}
+          ></span>
           <Text as="p" variant="heroSecondary">
             An introduction to the emerging fusion of modern statistical
             (machine learning) inference and
@@ -33,7 +51,7 @@ export default function Banner() {
               duration={400}
             >
               <Button variant="whiteButton" aria-label="To The Book">
-                To The Book
+                To the PDF
               </Button>
             </ScrollLink>
           </Flex>
@@ -49,7 +67,7 @@ export default function Banner() {
 const styles = {
   banner: {
     overflow: ["hidden", "initial", null, "hidden"],
-    backgroundImage: `url(${src.BannerBG})`,
+
     backgroundRepeat: `no-repeat`,
     backgroundPosition: "top left",
     backgroundSize: "cover",
@@ -57,7 +75,9 @@ const styles = {
     pt: ["150px", null, null, null, null, null, "140px", "130px"],
     pb: ["100px", null, null, "110px", null, 10, "150px"],
     mb: 7,
-    backgroundColor: "primary",
+    background: "gradient2",
+    background:
+      "linear-gradient(40deg, rgba(3,8,48,1) 0%, rgba(9,31,111,1) 53%, rgba(16,65,141,1) 100%)",
     container: {
       display: "flex",
     },
@@ -79,29 +99,6 @@ const styles = {
       overflow: "hidden",
       textAlign: "right",
       width: "50%",
-    },
-  },
-  sponsorTitle: {
-    color: "white",
-    fontSize: [1, 2],
-    opacity: 0.6,
-    pr: 20,
-    flexShrink: 0,
-    pb: [2, null, 0],
-  },
-  sponsorBox: {
-    pt: ["45px", null, null, null, null, "45px"],
-    flexDirection: ["column", null, "row"],
-    sponsor: {
-      display: "flex",
-      alignItems: "center",
-      "> a": {
-        mr: [5, null, null, 4, 6],
-        display: "flex",
-        "&:last-of-type": {
-          mr: 0,
-        },
-      },
     },
   },
 };

@@ -6,7 +6,7 @@ import data from "constants/labs.data";
 export default function Labs() {
   return (
     <section id="labs" sx={{ variant: "section.labs" }}>
-      <Container sx={{ my: 8 }}>
+      <Container sx={{ my: 7 }}>
         <SectionHeader slogan="Labs" title="Welcome to our Labs!" />
       </Container>
       <Box sx={styles.carouselWrapper}>
@@ -41,7 +41,10 @@ const styles = {
     display: "grid",
     mr: "auto",
     ml: "auto",
-    gridTemplateColumns: "repeat(auto-fill, minmax(25em, 1fr))",
+    gridTemplateColumns: [
+      "repeat(auto-fill, minmax(20em, 1fr))",
+      "repeat(auto-fill, minmax(25em, 1fr))",
+    ],
     mt: "-35px",
   },
   Notebook: {
@@ -59,8 +62,8 @@ const styles = {
     bg: "white",
     textAlign: "left",
     m: [
-      "28px 15px 0px 5px",
-      "28px 15px 0px 20px",
+      "28px 15px 0px 15px",
+      "28px 15px 0px 15px",
       "28px 15px 0px 15px",
       "28px 15px 0px 15px",
       "30px 15px 0px",
@@ -68,7 +71,6 @@ const styles = {
     "&:hover": {
       boxShadow: "0px 6px 37px rgba(38, 78, 118, 0.15)",
     },
-    ".footer-container": {},
     ".card-footer": {
       display: "grid",
       gridTemplateColumns: "50% 50%",

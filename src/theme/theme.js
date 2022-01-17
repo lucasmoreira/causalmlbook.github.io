@@ -8,13 +8,15 @@ export default {
     background: "#FFFFFF", // body background color
     background_secondary: "#F9FBFD", // secondary background color
     border_color: "#E5ECF4", // border color
-    primary: "#0f0d6e", // primary button and link color
-    secondary: "#ffc501", // secondary color - can be used for hover states
+    primary: "#030830", // primary button and link color "#0f0d6e"
+    secondary: "#ffc501", // secondary color - can be used for hover states "#ffc501"
     muted: "#7B8188", // muted color
-    accent: "#609", // a contrast color for emphasizing UI
+    accent: "#d5148f", // a contrast color for emphasizing UI
     yellow: "#F6C416",
     predictive: "#2A52BE",
     causal: "#DC143C",
+    gradient1: "#0853c8",
+    gradient2: "#030830",
 
     // highlight	a background color for highlighting text
     // modes: {
@@ -86,33 +88,18 @@ export default {
     main: {},
   },
   section: {
-    keyFeature: {
-      py: [8, null, 9, null, null, 10],
-    },
-    feature: {
-      py: [8, null, 9, null, null, 10],
-    },
-    partner: {
-      pt: [2, null, null, 5],
-      pb: [8, null, 9, null, null, 10],
-    },
     book: {
       py: [8, null, 9, null, null, 10],
     },
     notebooks: {
-      py: [8, null, 9, null, null, 10],
+      pt: [2, null, 6, null, null, 6],
+      pb: [7, null, null, null, null, 8],
     },
     labs: {
-      pb: 4,
+      pb: [4, null, 4, null, null, 4],
     },
-
-    securePayment: {
-      overflow: "hidden",
-      position: "relative",
-      pt: 9,
-    },
-    faq: {
-      py: [8, null, 9, null, null, 10],
+    doubleml: {
+      pb: [4, null, 4, null, null, 4],
     },
   },
   sectionHeader: {
@@ -165,7 +152,7 @@ export default {
       ],
       lineHeight: 1.2,
       fontWeight: 700,
-      mb: [5, null, null, null, "30px"],
+      mb: 4,
     },
     heroSecondary: {
       color: "white",

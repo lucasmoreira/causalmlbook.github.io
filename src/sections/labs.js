@@ -68,7 +68,7 @@ export default function Labs() {
           sliderClass=""
           slidesToSlide={1}
         >
-          {data.slice(0, 6).map((item) => (
+          {data.slice(0, 8).map((item) => (
             <Link href={item.link} sx={styles.Link}>
               <Box sx={styles.Notebook} key={`notebook--key${item.id}`}>
                 <Heading as="h3" sx={styles.title}>
@@ -105,6 +105,7 @@ export default function Labs() {
 
 const styles = {
   carouselWrapper: {
+    overflow: "hidden",
     display: "flex",
     justifyContent: "flex-end",
     flexDirection: "column",
@@ -217,7 +218,9 @@ const styles = {
     color: "primary",
     "&:hover": {
       boxShadow: "rgba(31, 62, 118, 0.57) 0px 9px 20px -5px",
-      backgroundColor: "primary",
+      background: "primary",
+      background:
+        "linear-gradient(40deg, rgba(3,8,48,1) 0%, rgba(9,31,111,1) 53%, rgba(16,65,141,1) 100%)",
       color: "white",
     },
   },

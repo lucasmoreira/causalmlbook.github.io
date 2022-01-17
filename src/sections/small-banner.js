@@ -1,6 +1,5 @@
 /** @jsxImportSource theme-ui */
 import { Container } from "theme-ui";
-import src from "constants/src.data";
 
 export default function Banner() {
   return (
@@ -13,7 +12,6 @@ export default function Banner() {
 const styles = {
   banner: {
     overflow: ["hidden", "initial", null, "hidden"],
-    backgroundImage: `url(${src.BannerBG})`,
     backgroundRepeat: `no-repeat`,
     backgroundPosition: "top left",
     backgroundSize: "cover",
@@ -21,7 +19,9 @@ const styles = {
     pt: "50px",
     pb: ["40px", null, null, "40px", "50px"],
     mb: 7,
-    backgroundColor: "primary",
+    background: "gradient2",
+    background:
+      "linear-gradient(40deg, rgba(3,8,48,1) 0%, rgba(9,31,111,1) 53%, rgba(16,65,141,1) 100%)",
     container: {
       display: "flex",
     },
