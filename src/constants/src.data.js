@@ -20,4 +20,6 @@ export default {
   Colab: "assets/colab.svg",
   Python: "assets/python.svg",
   R: "assets/r.svg",
+
+  TestPDF: "assets/chapters/Lorem_ipsum.pdf",
 };

@@ -12,6 +12,7 @@ import {
   Label,
 } from "theme-ui";
 import SectionHeader from "components/section-header";
+import src from "constants/src.data";
 
 export default function Book() {
   return (
@@ -21,20 +22,22 @@ export default function Book() {
           slogan="Book"
           title="Applied Causal Inference Powered by ML and AI"
         />
-        <Button
-          sx={styles.BookBtn}
-          variant="secondary"
-          aria-label="To The Book"
-        >
-          Full Book PDF
-        </Button>
+        <Link href={src.TestPDF} sx={{ textDecoration: "none" }}>
+          <Button
+            sx={styles.BookBtn}
+            variant="secondary"
+            aria-label="To The Book"
+          >
+            Full Book PDF
+          </Button>
+        </Link>
       </Container>
 
       <Container sx={styles.tableofcontents}>
         <ul>
           <Card>
             <li>
-              <Link href="/">
+              <Link href={src.TestPDF}>
                 <Heading>Preface</Heading>
               </Link>
             </li>
@@ -47,14 +50,14 @@ export default function Book() {
               <ul>
                 <li>
                   <Text sx={styles.Span}>1</Text>
-                  <Link href="/">
+                  <Link href={src.TestPDF}>
                     <Text variant="predictive">Predictive Inference</Text> 1:
                     Linear Regression in Moderately High Dimensions
                   </Link>
                 </li>
                 <li>
                   <Text sx={styles.Span}>2</Text>
-                  <Link href="/">
+                  <Link href={src.TestPDF}>
                     <Text variant="causal">Causal Inference</Text> 1: Randomized
                     Experiments
                   </Link>
@@ -62,14 +65,14 @@ export default function Book() {
 
                 <li>
                   <Text sx={styles.Span}>3</Text>
-                  <Link href="/">
+                  <Link href={src.TestPDF}>
                     <Text variant="predictive">Predictive Inference</Text> 2(A):
                     Modern High Dimensional Linear Regression
                   </Link>
                 </li>
                 <li>
                   <Text sx={styles.Span}>4</Text>
-                  <Link href="/">
+                  <Link href={src.TestPDF}>
                     <Text variant="causal">Causal Inference</Text> 2(A): Causal
                     Identification via Conditional Exogeneity
                   </Link>
@@ -77,7 +80,7 @@ export default function Book() {
 
                 <li>
                   <Text sx={styles.Span}>5</Text>
-                  <Link href="/">
+                  <Link href={src.TestPDF}>
                     <Text variant="predictive">Predictive Inference</Text> 2(B):
                     Inference on Predictive and Causal Effects in High
                     Dimensional Linear Regression Models
@@ -85,28 +88,28 @@ export default function Book() {
                 </li>
                 <li>
                   <Text sx={styles.Span}>6</Text>
-                  <Link href="/">
+                  <Link href={src.TestPDF}>
                     <Text variant="causal">Causal Inference</Text> 2(B):
                     Structural Equations and Conditional Exogeneity
                   </Link>
                 </li>
                 <li>
                   <Text sx={styles.Span}>7</Text>
-                  <Link href="/">
+                  <Link href={src.TestPDF}>
                     <Text variant="predictive">Predictive Inference</Text> 3:
                     Modern High Dimensional Nonlinear Regression
                   </Link>
                 </li>
                 <li>
                   <Text sx={styles.Span}>8</Text>
-                  <Link href="/">
+                  <Link href={src.TestPDF}>
                     <Text variant="causal">Causal Inference</Text> 3: Causal
                     DAGs, Markov Nets, Nonlinear SEMs
                   </Link>
                 </li>
                 <li>
                   <Text sx={styles.Span}>9</Text>
-                  <Link href="/">
+                  <Link href={src.TestPDF}>
                     <Text variant="predictive">Predictive Inference</Text> 4:
                     Debiased ML Inference on Predictive and Causal Effects in
                     Modern Nonlinear Regression Models
@@ -114,7 +117,7 @@ export default function Book() {
                 </li>
                 <li>
                   <Text sx={styles.Span}>10</Text>
-                  <Link href="/">
+                  <Link href={src.TestPDF}>
                     <Text variant="predictive">Predictive Inference</Text> 5:
                     Feature Engineering With Deep Learning for Causal and
                     Predictive Inference
@@ -131,14 +134,14 @@ export default function Book() {
               <ul>
                 <li>
                   <Text sx={styles.Span}>11</Text>
-                  <Link href="/">
+                  <Link href={src.TestPDF}>
                     Advanced Core 1: Unobserved Confounders, Instrumental
                     Variables, and Proxy Controls
                   </Link>
                 </li>
                 <li>
                   <Text sx={styles.Span}>12</Text>
-                  <Link href="/">
+                  <Link href={src.TestPDF}>
                     Advanced Core 2: Debiased ML for IV and Proxy Controls
                     Models and Robust DML Inference under Weak Identification
                   </Link>
@@ -154,7 +157,7 @@ export default function Book() {
               <ul>
                 <li>
                   <Text sx={styles.Span}>13</Text>
-                  <Link href="/">
+                  <Link href={src.TestPDF}>
                     Topic 1: Inference on Heterogeneous Treatment Effects
                   </Link>
                 </li>
