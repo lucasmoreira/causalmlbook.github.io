@@ -13,10 +13,11 @@ export default {
     muted: "#7B8188", // muted color
     accent: "#d5148f", // a contrast color for emphasizing UI
     yellow: "#F6C416",
-    predictive: "#2A52BE",
-    causal: "#DC143C",
+    predictive: "#0853c8",
+    causal: "#d5148f",
     gradient1: "#0853c8",
     gradient2: "#030830",
+    tocHover: "#f2f5f7",
 
     // highlight	a background color for highlighting text
     // modes: {

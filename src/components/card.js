@@ -10,7 +10,7 @@ const styles = {
     backgroundColor: "white",
     width: "100%",
     boxShadow: "0px 5px 10px rgba(38,78,118,0.12)",
-    borderRadius: "7px",
+    borderRadius: "30px",
     m: "0 0px 20px",
     p: "10px 20px 10px",
     transition: "all 0.3s",

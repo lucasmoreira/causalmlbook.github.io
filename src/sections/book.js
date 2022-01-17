@@ -1,20 +1,41 @@
 import Card from "components/card.js";
-import {
-  Container,
-  Flex,
-  Box,
-  Heading,
-  Text,
-  Image,
-  Button,
-  Divider,
-  Link,
-  Label,
-} from "theme-ui";
+import { Container, Heading, Text, Button, Link } from "theme-ui";
 import SectionHeader from "components/section-header";
 import src from "constants/src.data";
+import chapters from "constants/toc.data";
 
 export default function Book() {
+  const TOC = chapters.map(function (chapter) {
+    return (
+      <Card>
+        <li className="parentListItem">
+          {chapter.link ? (
+            <Link href={chapter.link}>
+              <Heading>{chapter.title}</Heading>
+            </Link>
+          ) : (
+            <Heading>{chapter.title}</Heading>
+          )}
+          {chapter.children &&
+            chapter.children.map(function (child) {
+              return (
+                <li className="childListItem">
+                  <Link href={child.link}>
+                    <Text className="chapterNumber">{child.number}</Text>
+                    {child.prefix && (
+                      <Text as="p" className={child.prefix[0].split(" ")[0]}>
+                        {child.prefix[0] + " " + child.prefix[1]}
+                      </Text>
+                    )}
+                    <Text className="title">{child.title}</Text>
+                  </Link>
+                </li>
+              );
+            })}
+        </li>
+      </Card>
+    );
+  });
   return (
     <section id="book" sx={{ variant: "section.book" }}>
       <Container>
@@ -34,137 +55,7 @@ export default function Book() {
       </Container>
 
       <Container sx={styles.tableofcontents}>
-        <ul>
-          <Card>
-            <li>
-              <Link href={src.TestPDF}>
-                <Heading>Preface</Heading>
-              </Link>
-            </li>
-          </Card>
-          <Card>
-            <li>
-              <Link>
-                <Heading>Core Material</Heading>
-              </Link>
-              <ul>
-                <li>
-                  <Text sx={styles.Span}>1</Text>
-                  <Link href={src.TestPDF}>
-                    <Text variant="predictive">Predictive Inference</Text> 1:
-                    Linear Regression in Moderately High Dimensions
-                  </Link>
-                </li>
-                <li>
-                  <Text sx={styles.Span}>2</Text>
-                  <Link href={src.TestPDF}>
-                    <Text variant="causal">Causal Inference</Text> 1: Randomized
-                    Experiments
-                  </Link>
-                </li>
-
-                <li>
-                  <Text sx={styles.Span}>3</Text>
-                  <Link href={src.TestPDF}>
-                    <Text variant="predictive">Predictive Inference</Text> 2(A):
-                    Modern High Dimensional Linear Regression
-                  </Link>
-                </li>
-                <li>
-                  <Text sx={styles.Span}>4</Text>
-                  <Link href={src.TestPDF}>
-                    <Text variant="causal">Causal Inference</Text> 2(A): Causal
-                    Identification via Conditional Exogeneity
-                  </Link>
-                </li>
-
-                <li>
-                  <Text sx={styles.Span}>5</Text>
-                  <Link href={src.TestPDF}>
-                    <Text variant="predictive">Predictive Inference</Text> 2(B):
-                    Inference on Predictive and Causal Effects in High
-                    Dimensional Linear Regression Models
-                  </Link>
-                </li>
-                <li>
-                  <Text sx={styles.Span}>6</Text>
-                  <Link href={src.TestPDF}>
-                    <Text variant="causal">Causal Inference</Text> 2(B):
-                    Structural Equations and Conditional Exogeneity
-                  </Link>
-                </li>
-                <li>
-                  <Text sx={styles.Span}>7</Text>
-                  <Link href={src.TestPDF}>
-                    <Text variant="predictive">Predictive Inference</Text> 3:
-                    Modern High Dimensional Nonlinear Regression
-                  </Link>
-                </li>
-                <li>
-                  <Text sx={styles.Span}>8</Text>
-                  <Link href={src.TestPDF}>
-                    <Text variant="causal">Causal Inference</Text> 3: Causal
-                    DAGs, Markov Nets, Nonlinear SEMs
-                  </Link>
-                </li>
-                <li>
-                  <Text sx={styles.Span}>9</Text>
-                  <Link href={src.TestPDF}>
-                    <Text variant="predictive">Predictive Inference</Text> 4:
-                    Debiased ML Inference on Predictive and Causal Effects in
-                    Modern Nonlinear Regression Models
-                  </Link>
-                </li>
-                <li>
-                  <Text sx={styles.Span}>10</Text>
-                  <Link href={src.TestPDF}>
-                    <Text variant="predictive">Predictive Inference</Text> 5:
-                    Feature Engineering With Deep Learning for Causal and
-                    Predictive Inference
-                  </Link>
-                </li>
-              </ul>
-            </li>
-          </Card>
-          <Card>
-            <li>
-              <Link>
-                <Heading>Advanced Core Material</Heading>
-              </Link>
-              <ul>
-                <li>
-                  <Text sx={styles.Span}>11</Text>
-                  <Link href={src.TestPDF}>
-                    Advanced Core 1: Unobserved Confounders, Instrumental
-                    Variables, and Proxy Controls
-                  </Link>
-                </li>
-                <li>
-                  <Text sx={styles.Span}>12</Text>
-                  <Link href={src.TestPDF}>
-                    Advanced Core 2: Debiased ML for IV and Proxy Controls
-                    Models and Robust DML Inference under Weak Identification
-                  </Link>
-                </li>
-              </ul>
-            </li>
-          </Card>
-          <Card>
-            <li>
-              <Link>
-                <Heading>Topics</Heading>
-              </Link>
-              <ul>
-                <li>
-                  <Text sx={styles.Span}>13</Text>
-                  <Link href={src.TestPDF}>
-                    Topic 1: Inference on Heterogeneous Treatment Effects
-                  </Link>
-                </li>
-              </ul>
-            </li>
-          </Card>
-        </ul>
+        <ul>{TOC}</ul>
       </Container>
     </section>
   );
@@ -173,30 +64,71 @@ export default function Book() {
 const styles = {
   tableofcontents: {
     width: "100%",
-    lineHeight: 2.3,
     mb: 7,
-    display: "block",
-    marginRight: "auto",
-    marginLeft: "auto",
-    pl: 0,
-    ul: {
-      listStyle: "none",
-      pl: 0,
-      a: {
-        color: "text",
-        fontSize: 2,
-        fontWeight: 500,
-        textDecoration: "none",
-        "&:hover": {
-          color: "secondary",
+    pr: [4, null, null, null, null, null, 6],
+
+    ".parentListItem": {
+      a: { textDecoration: "none" },
+      ".childListItem": {
+        my: 4,
+        a: {
+          display: "grid",
+          gridTemplateColumns: "4em 1fr",
+          justifyItems: "start",
+          alignItems: "center",
+          lineHeight: "1.5em",
+          gridGap: "0px",
+          color: "text",
+          fontSize: 2,
+          textDecoration: "none",
+          "&:hover": {
+            backgroundColor: "tocHover",
+            borderRadius: "30px",
+          },
+        },
+        ".chapterNumber": {
+          gridRow: "1 / 3",
+          gridColumn: "1",
+          fontSize: 8,
+          textAlign: "right",
+          width: "2.5em",
+          pr: "1em",
+          fontWeight: 700,
+          "&:after": {
+            content: "''",
+            backgroundColor: "text",
+            width: "1px",
+            height: "1.5em",
+            position: "absolute",
+            ml: "0.5em",
+            mt: "-0.4em",
+          },
+        },
+        ".Causal, .Predictive": {
+          gridColumn: "2",
+          gridRow: "1",
+          fontSize: "13px",
+          letterSpacing: "1px",
+          textTransform: "uppercase",
+          fontWeight: 700,
+          ml: "1rem",
+        },
+        ".Causal": { color: "causal" },
+        ".Predictive": { color: "predictive" },
+
+        ".title": {
+          ml: "1rem",
+          gridColumn: "2",
+          gridRow: "2",
+          fontSize: [1, 2, 3],
+          fontWeight: 500,
         },
       },
     },
-  },
-  Span: {
-    fontSize: 3,
-    fontWeight: 700,
-    pr: 3,
+    ul: {
+      listStyle: "none",
+      pl: 0,
+    },
   },
   BookBtn: {
     display: "block",
