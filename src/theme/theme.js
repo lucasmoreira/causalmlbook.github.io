@@ -18,6 +18,7 @@ export default {
     gradient1: "#0853c8",
     gradient2: "#030830",
     tocHover: "#f2f5f7",
+    lightaccent: "#AFC3D3",
 
     // highlight	a background color for highlighting text
     // modes: {

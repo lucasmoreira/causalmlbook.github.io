@@ -1,5 +1,16 @@
 import src from "./src.data";
 
+/* STRUCTURE:
+  id: some unique id for the chapter
+  title: chapter title
+  number: chapter number -- null if none
+  type: header / item
+  prefix: ["name", "number"] -- null if none
+  link: link to the pdf in src.data.js
+  notebooks: ["id1", "id2", "id3"] list of notebook ids
+  children: children of this header (only for headers! else null)
+*/
+
 export default [
   {
     id: "preface",
@@ -8,6 +19,7 @@ export default [
     type: "header",
     prefix: null,
     link: src.TestPDF,
+    notebooks: [],
     children: null,
   },
   {
@@ -17,6 +29,7 @@ export default [
     type: "header",
     prefix: null,
     link: "",
+    notebooks: [],
     children: [
       {
         id: "linear-regression",
@@ -26,6 +39,10 @@ export default [
         prefix: ["Predictive Inference", "1"],
         link: src.TestPDF,
         children: null,
+        notebooks: [
+          "dml-for-conditional-average-treatment-effect",
+          "dml-for-ate-and-late-of-401k-on-wealth",
+        ],
       },
       {
         id: "randomized-experiments",
@@ -35,6 +52,11 @@ export default [
         prefix: ["Causal Inference", "1"],
         link: src.TestPDF,
         children: null,
+        notebooks: [
+          "dml-for-conditional-average-treatment-effect",
+          "dml-for-ate-and-late-of-401k-on-wealth",
+          "ols-and-lasso-for-gender-wage-gap-inference",
+        ],
       },
       {
         id: "high-dimensional-linear-regression",
@@ -44,6 +66,7 @@ export default [
         prefix: ["Predictive Inference", "2A"],
         link: src.TestPDF,
         children: null,
+        notebooks: null,
       },
       {
         id: "causal-identification",
@@ -53,6 +76,10 @@ export default [
         prefix: ["Causal Inference", "2A"],
         link: src.TestPDF,
         children: null,
+        notebooks: [
+          "dml-for-conditional-average-treatment-effect",
+          "dml-for-ate-and-late-of-401k-on-wealth",
+        ],
       },
       {
         id: "inference-on-predictive-and-causal-effects",
@@ -63,6 +90,7 @@ export default [
         prefix: ["Predictive Inference", "2B"],
         link: src.TestPDF,
         children: null,
+        notebooks: ["dml-inference-for-gun-ownership"],
       },
       {
         id: "structural-equations",
@@ -72,6 +100,10 @@ export default [
         prefix: ["Causal Inference", "2B"],
         link: src.TestPDF,
         children: null,
+        notebooks: [
+          "dml-for-conditional-average-treatment-effect",
+          "dml-for-ate-and-late-of-401k-on-wealth",
+        ],
       },
       {
         id: "high-dimensional-nonlinear-regression",
@@ -81,6 +113,10 @@ export default [
         prefix: ["Predictive Inference", "3"],
         link: src.TestPDF,
         children: null,
+        notebooks: [
+          "dml-for-conditional-average-treatment-effect",
+          "dml-for-ate-and-late-of-401k-on-wealth",
+        ],
       },
       {
         id: "causal-dags",
@@ -90,6 +126,10 @@ export default [
         prefix: ["Causal Inference", "3"],
         link: src.TestPDF,
         children: null,
+        notebooks: [
+          "dml-for-conditional-average-treatment-effect",
+          "dml-for-ate-and-late-of-401k-on-wealth",
+        ],
       },
       {
         id: "debaised-ml-inference",
@@ -100,6 +140,10 @@ export default [
         prefix: ["Predictive Inference", "4"],
         link: src.TestPDF,
         children: null,
+        notebooks: [
+          "dml-for-conditional-average-treatment-effect",
+          "dml-for-ate-and-late-of-401k-on-wealth",
+        ],
       },
       {
         id: "deep-learning",
@@ -110,6 +154,10 @@ export default [
         prefix: ["Predictive Inference", "5"],
         link: src.TestPDF,
         children: null,
+        notebooks: [
+          "dml-for-conditional-average-treatment-effect",
+          "dml-for-ate-and-late-of-401k-on-wealth",
+        ],
       },
     ],
   },
@@ -120,6 +168,7 @@ export default [
     type: "header",
     prefix: null,
     link: "",
+    notebooks: [],
     children: [
       {
         id: "unobserved-confounders",
@@ -127,9 +176,13 @@ export default [
           "Unobserved Confounders, Instrumental Variables, and Proxy Controls",
         number: 11,
         type: "item",
-        prefix: null,
+        prefix: ["Advanced Core", "1"],
         link: src.TestPDF,
         children: null,
+        notebooks: [
+          "dml-for-conditional-average-treatment-effect",
+          "dml-for-ate-and-late-of-401k-on-wealth",
+        ],
       },
       {
         id: "debaised-ml-for-iv",
@@ -137,9 +190,13 @@ export default [
           "Debiased ML for IV and Proxy Controls Models and Robust DML Inference under Weak Identification",
         number: 12,
         type: "item",
-        prefix: null,
+        prefix: ["Advanced Core", "2"],
         link: src.TestPDF,
         children: null,
+        notebooks: [
+          "dml-for-conditional-average-treatment-effect",
+          "dml-for-ate-and-late-of-401k-on-wealth",
+        ],
       },
     ],
   },
@@ -150,15 +207,20 @@ export default [
     type: "header",
     prefix: null,
     link: "",
+    notebooks: [],
     children: [
       {
         id: "inference-on-heterogeneous-treatment-effects",
         title: "Inference on Heterogeneous Treatment Effects",
         number: 13,
         type: "item",
-        prefix: null,
+        prefix: ["Topics", "1"],
         link: src.TestPDF,
         children: null,
+        notebooks: [
+          "dml-for-conditional-average-treatment-effect",
+          "dml-for-ate-and-late-of-401k-on-wealth",
+        ],
       },
     ],
   },

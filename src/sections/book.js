@@ -1,13 +1,16 @@
+import React, { useState } from "react";
 import Card from "components/card.js";
 import { Container, Heading, Text, Button, Link } from "theme-ui";
 import SectionHeader from "components/section-header";
 import src from "constants/src.data";
 import chapters from "constants/toc.data";
+import Dropdown from "components/dropdown";
+import notebooks from "constants/labs.data";
 
 export default function Book() {
   const TOC = chapters.map(function (chapter) {
     return (
-      <Card>
+      <Card key={chapter.id}>
         <li className="parentListItem">
           {chapter.link ? (
             <Link href={chapter.link}>
@@ -19,16 +22,29 @@ export default function Book() {
           {chapter.children &&
             chapter.children.map(function (child) {
               return (
-                <li className="childListItem">
-                  <Link href={child.link}>
-                    <Text className="chapterNumber">{child.number}</Text>
-                    {child.prefix && (
-                      <Text as="p" className={child.prefix[0].split(" ")[0]}>
-                        {child.prefix[0] + " " + child.prefix[1]}
-                      </Text>
+                <li key={child.id} className="childListItem">
+                  <Container className="chapterContainer">
+                    <Link className="chapterLink" href={child.link}>
+                      <Text className="chapterNumber">{child.number}</Text>
+                      {child.prefix && (
+                        <Text as="p" className={child.prefix[0].split(" ")[0]}>
+                          {child.prefix[0] + " " + child.prefix[1]}
+                        </Text>
+                      )}
+                      <Text className="title">{child.title}</Text>
+                    </Link>
+                    {child.notebooks && (
+                      <Container className="dropdown">
+                        <Container className="dropdownContainer">
+                          <Dropdown
+                            notebooks={child.notebooks.map((id) =>
+                              notebooks.find((item) => item.id === id)
+                            )}
+                          />
+                        </Container>
+                      </Container>
                     )}
-                    <Text className="title">{child.title}</Text>
-                  </Link>
+                  </Container>
                 </li>
               );
             })}
@@ -53,7 +69,6 @@ export default function Book() {
           </Button>
         </Link>
       </Container>
-
       <Container sx={styles.tableofcontents}>
         <ul>{TOC}</ul>
       </Container>
@@ -71,7 +86,38 @@ const styles = {
       a: { textDecoration: "none" },
       ".childListItem": {
         my: 4,
-        a: {
+        ".chapterContainer": {
+          display: "grid",
+          gridTemplateColumns: "1fr 11%",
+          px: 0,
+
+          ".dropdown": {
+            position: "relative",
+            px: 0,
+            zIndex: 0,
+            ".dropdownContainer": {
+              position: "absolute",
+              top: "50%",
+              left: "50%",
+              transform: "translate(-50%,-50%)",
+            },
+          },
+          "&:hover .dropdown": {
+            zIndex: 2,
+          },
+          "@media screen and (max-width: 1024px)": {
+            ".dropdown": {
+              display: "none",
+            },
+          },
+        },
+        "@media screen and (max-width: 1024px)": {
+          ".chapterContainer": {
+            display: "block",
+            px: 0,
+          },
+        },
+        ".chapterLink": {
           display: "grid",
           gridTemplateColumns: "4em 1fr",
           justifyItems: "start",
@@ -82,7 +128,7 @@ const styles = {
           fontSize: 2,
           textDecoration: "none",
           "&:hover": {
-            backgroundColor: "tocHover",
+            //backgroundColor: "tocHover",
             borderRadius: "30px",
           },
         },
@@ -104,7 +150,7 @@ const styles = {
             mt: "-0.4em",
           },
         },
-        ".Causal, .Predictive": {
+        ".Causal, .Predictive, .Advanced, .Topics": {
           gridColumn: "2",
           gridRow: "1",
           fontSize: "13px",
@@ -115,6 +161,7 @@ const styles = {
         },
         ".Causal": { color: "causal" },
         ".Predictive": { color: "predictive" },
+        ".Advanced, .Topics": { color: "muted" },
 
         ".title": {
           ml: "1rem",
