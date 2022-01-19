@@ -69,7 +69,7 @@ export default function Labs() {
           slidesToSlide={1}
         >
           {data.slice(0, 8).map((item) => (
-            <Link href={item.link} sx={styles.Link}>
+            <Link key={item.id} href={item.link} sx={styles.Link}>
               <Box sx={styles.Notebook} key={`notebook--key${item.id}`}>
                 <Heading as="h3" sx={styles.title}>
                   {item.title}

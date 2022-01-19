@@ -1,21 +1,7 @@
 /** @jsxImportSource theme-ui */
 import { Container, Box, Text, Image, Divider } from "theme-ui";
 import SectionHeader from "components/section-header";
-import src from "constants/src.data";
-import { FaBook, FaGithub } from "react-icons/fa";
-
-const dmldata = [
-  {
-    name: "Docs",
-    path: src.DoubleMLLink,
-    icon: <FaBook />,
-  },
-  {
-    name: "GitHub",
-    path: src.DoubleMLGitHubLink,
-    icon: <FaGithub />,
-  },
-];
+import dmldata from "constants/doubleml.data";
 
 export default function DoubleML() {
   return (
@@ -55,18 +41,12 @@ export default function DoubleML() {
             <Image src="https://docs.doubleml.org/dev/logo.png"></Image>
           </Box>
           <Box>
-            <Text className="textbody">
-              The Python and R package DoubleML provide an implementation of the
-              double / debiased machine learning framework of Chernozhukov et
-              al. (2018). The Python package is built on top of scikit-learn
-              (Pedregosa et al., 2011) and the R package on top of mlr3 and the
-              mlr3 ecosystem (Lang et al., 2019).
-            </Text>
+            <Text className="textbody">{dmldata.description}</Text>
           </Box>
         </Container>
         <Divider />
         <Box sx={styles.footer}>
-          {dmldata.map(({ name, path, icon }, i) => (
+          {dmldata.links.map(({ name, path, icon }, i) => (
             <Box as="span" key={i} sx={styles.footer.icon}>
               <a href={path}>
                 {icon}
