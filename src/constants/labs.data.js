@@ -14,7 +14,7 @@ export default [
     id: "dml-for-conditional-average-treatment-effect",
     title: "DML for Conditional Average Treatment Effect",
     description:
-      "This is a simple demonstration of Debiased Machine Learning estimator for the Conditional Average Treatment Effect. Goal is to estimate the effect of 401(k) eligibility on net financial assets for each value of income",
+      "This is a simple demonstration of Debiased Machine Learning estimator for the Conditional Average Treatment Effect. Goal is to estimate the effect of 401(k) eligibility on net financial assets for each value of income. ",
     site: src.Kaggle,
     lab: src.R,
     link: "https://www.kaggle.com/victorchernozhukov/dml-for-conditional-average-treatment-effect?scriptVersionId=66048820",

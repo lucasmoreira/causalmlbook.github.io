@@ -18,7 +18,7 @@ export default [
     number: null,
     type: "header",
     prefix: null,
-    link: src.TestPDF,
+    link: src.Preface,
     notebooks: [],
     children: null,
   },
@@ -37,7 +37,7 @@ export default [
         number: 1,
         type: "item",
         prefix: ["Predictive Inference", "1"],
-        link: src.TestPDF,
+        link: src.Chapter1,
         children: null,
         notebooks: [
           "dml-for-conditional-average-treatment-effect",
@@ -50,7 +50,7 @@ export default [
         number: 2,
         type: "item",
         prefix: ["Causal Inference", "1"],
-        link: src.TestPDF,
+        link: src.Chapter2,
         children: null,
         notebooks: [
           "dml-for-conditional-average-treatment-effect",
@@ -64,7 +64,7 @@ export default [
         number: 3,
         type: "item",
         prefix: ["Predictive Inference", "2A"],
-        link: src.TestPDF,
+        link: src.Chapter3,
         children: null,
         notebooks: null,
       },
@@ -74,7 +74,7 @@ export default [
         number: 4,
         type: "item",
         prefix: ["Causal Inference", "2A"],
-        link: src.TestPDF,
+        link: src.Chapter4,
         children: null,
         notebooks: [
           "dml-for-conditional-average-treatment-effect",
@@ -88,7 +88,7 @@ export default [
         number: 5,
         type: "item",
         prefix: ["Predictive Inference", "2B"],
-        link: src.TestPDF,
+        link: src.Chapter5,
         children: null,
         notebooks: ["dml-inference-for-gun-ownership"],
       },
@@ -98,7 +98,7 @@ export default [
         number: 6,
         type: "item",
         prefix: ["Causal Inference", "2B"],
-        link: src.TestPDF,
+        link: src.Chapter6,
         children: null,
         notebooks: [
           "dml-for-conditional-average-treatment-effect",
@@ -111,7 +111,7 @@ export default [
         number: 7,
         type: "item",
         prefix: ["Predictive Inference", "3"],
-        link: src.TestPDF,
+        link: src.Chapter7,
         children: null,
         notebooks: [
           "dml-for-conditional-average-treatment-effect",
@@ -124,7 +124,7 @@ export default [
         number: 8,
         type: "item",
         prefix: ["Causal Inference", "3"],
-        link: src.TestPDF,
+        link: src.Chapter8,
         children: null,
         notebooks: [
           "dml-for-conditional-average-treatment-effect",
@@ -138,7 +138,7 @@ export default [
         number: 9,
         type: "item",
         prefix: ["Predictive Inference", "4"],
-        link: src.TestPDF,
+        link: src.Chapter9,
         children: null,
         notebooks: [
           "dml-for-conditional-average-treatment-effect",
@@ -152,7 +152,7 @@ export default [
         number: 10,
         type: "item",
         prefix: ["Predictive Inference", "5"],
-        link: src.TestPDF,
+        link: src.Chapter10,
         children: null,
         notebooks: [
           "dml-for-conditional-average-treatment-effect",
@@ -177,7 +177,7 @@ export default [
         number: 11,
         type: "item",
         prefix: ["Advanced Core", "1"],
-        link: src.TestPDF,
+        link: src.Chapter11,
         children: null,
         notebooks: [
           "dml-for-conditional-average-treatment-effect",
@@ -191,7 +191,7 @@ export default [
         number: 12,
         type: "item",
         prefix: ["Advanced Core", "2"],
-        link: src.TestPDF,
+        link: src.Chapter12,
         children: null,
         notebooks: [
           "dml-for-conditional-average-treatment-effect",
@@ -215,7 +215,7 @@ export default [
         number: 13,
         type: "item",
         prefix: ["Topics", "1"],
-        link: src.TestPDF,
+        link: src.Chapter13,
         children: null,
         notebooks: [
           "dml-for-conditional-average-treatment-effect",
