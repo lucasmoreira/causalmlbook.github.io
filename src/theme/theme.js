@@ -172,18 +172,6 @@ export default {
       lineHeight: "30px",
       color: "#0F2137",
     },
-    lead: {
-      fontSize: 40,
-      fontFamily: "DM Sans",
-      fontWeight: "500",
-      lineHeight: "60px",
-      letterSpacing: "-1.5px",
-      color: "#0F2137",
-    },
-    muted: {
-      lineHeight: "26px",
-      color: "muted",
-    },
     secondary: {
       fontWeight: 500,
       color: "#00A99D",
@@ -221,13 +209,6 @@ export default {
     },
     logo: {
       display: "flex",
-    },
-  },
-  images: {
-    avatar: {
-      width: 48,
-      height: 48,
-      borderRadius: 99999,
     },
   },
   // variants for buttons
@@ -276,40 +257,11 @@ export default {
         color: "heading_secondary",
       },
     },
-    textButton: {
-      variant: "buttons.defaultBtn",
-      backgroundColor: "transparent",
-      color: "white",
-      display: "flex",
-      alignItems: "center",
-      svg: {
-        fontSize: [4, 6],
-        mr: 2,
-      },
-    },
   },
   cards: {
     primary: {
       padding: 2,
       borderRadius: 4,
-    },
-    offer: {
-      display: "flex",
-      flexDirection: "column",
-      justifyContent: "center",
-      alignItems: "center",
-      flex: ["1 1 calc(50% - 16px)", "1 1 20%"],
-      minHeight: 130,
-      m: 2,
-      background: "#FFFFFF",
-      border: "1px solid #EDEFF6",
-      borderRadius: 5,
-    },
-    featureCard: {
-      display: "flex",
-      alignItems: "flex-start",
-      flexDirection: "row",
-      p: 3,
     },
   },
   forms: {
